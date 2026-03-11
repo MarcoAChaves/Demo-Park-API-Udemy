@@ -1,5 +1,6 @@
 package com.chaves.demo_park_api.web.exception;
 
+import com.chaves.demo_park_api.exception.CpfUniqueViolationException;
 import com.chaves.demo_park_api.exception.EntityNotFoundException;
 import com.chaves.demo_park_api.exception.PasswordInvalidException;
 import com.chaves.demo_park_api.exception.UsernameUniqueViolationException;
@@ -48,7 +49,7 @@ public class ApiExceptionHandler {
                 .body(new ErrorMessage(request, HttpStatus.NOT_FOUND, ex.getMessage()));
     }
 
-    @ExceptionHandler(UsernameUniqueViolationException.class)
+    @ExceptionHandler({UsernameUniqueViolationException.class, CpfUniqueViolationException.class})
     public ResponseEntity<ErrorMessage>uniqueViolationException(RuntimeException ex,
                                                                        HttpServletRequest request){
         log.error("Api Error - ", ex);
