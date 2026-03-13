@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class JwtUserDetailsService implements UserDetailsService {
 
     private final UsuarioService usuarioService;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Usuario usuario = usuarioService.buscarPorUsername(username);

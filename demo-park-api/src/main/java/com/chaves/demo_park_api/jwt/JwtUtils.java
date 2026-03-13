@@ -13,9 +13,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
-
-import java.security.Key;
-
 @Slf4j
 public class JwtUtils {
 
@@ -26,7 +23,7 @@ public class JwtUtils {
     public static final long EXPIRE_HOURS = 0;
     public static final long EXPIRE_MINUTES = 30;
 
-    private JwtUtils(){
+    private JwtUtils() {
     }
 
     private static Key generateKey() {

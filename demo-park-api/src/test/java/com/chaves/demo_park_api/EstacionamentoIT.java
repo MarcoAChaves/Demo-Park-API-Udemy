@@ -2,7 +2,6 @@ package com.chaves.demo_park_api;
 
 import com.chaves.demo_park_api.web.dto.EstacionamentoCreateDto;
 import com.chaves.demo_park_api.web.dto.PageableDto;
-import io.jsonwebtoken.Jwt;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

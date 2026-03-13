@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class SpringDocOpenApiConfig {
 
     @Bean
-    public OpenAPI openAPI(){
+    public OpenAPI openAPI() {
         return new OpenAPI()
                 .components(new Components().addSecuritySchemes("security", securityScheme()))
                 .info(
@@ -26,7 +26,7 @@ public class SpringDocOpenApiConfig {
                 );
     }
 
-    private SecurityScheme securityScheme(){
+    private SecurityScheme securityScheme() {
         return new SecurityScheme()
                 .description("Insira um toen valido para prosseguir")
                 .type(SecurityScheme.Type.HTTP)

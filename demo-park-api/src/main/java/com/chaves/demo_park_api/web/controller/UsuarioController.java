@@ -84,7 +84,7 @@ public class UsuarioController {
     }
 
     @Operation(summary = "Listar todos os usuários cadastrados", description = "equisição exige um token. Acesso restrito a ADMIN|",
-           security = @SecurityRequirement(name = "security"),
+            security = @SecurityRequirement(name = "security"),
             responses = {
                     @ApiResponse(responseCode = "200", description = "Lista com todos os usuários cadastrados",
                             content = @Content(mediaType = "application/json",

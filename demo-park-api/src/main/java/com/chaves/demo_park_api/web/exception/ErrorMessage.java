@@ -1,7 +1,6 @@
 package com.chaves.demo_park_api.web.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.Getter;
 import lombok.ToString;
@@ -24,10 +23,10 @@ public class ErrorMessage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Map<String, String> errors;
 
-    public ErrorMessage(){
+    public ErrorMessage() {
     }
 
-    public ErrorMessage (HttpServletRequest request, HttpStatus status, String message){
+    public ErrorMessage(HttpServletRequest request, HttpStatus status, String message) {
         this.path = request.getRequestURI();
         this.method = request.getMethod();
         this.status = status.value();
@@ -35,13 +34,13 @@ public class ErrorMessage {
         this.message = message;
     }
 
-    public ErrorMessage (HttpServletRequest request, HttpStatus status, String message, BindingResult result){
+    public ErrorMessage(HttpServletRequest request, HttpStatus status, String message, BindingResult result) {
         this.path = request.getRequestURI();
         this.method = request.getMethod();
         this.status = status.value();
         this.statusText = status.getReasonPhrase();
         this.message = message;
-        addErrors (result);
+        addErrors(result);
     }
 
     private void addErrors(BindingResult result) {

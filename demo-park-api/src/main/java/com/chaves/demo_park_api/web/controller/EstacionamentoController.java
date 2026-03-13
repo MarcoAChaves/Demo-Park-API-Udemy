@@ -111,7 +111,7 @@ public class EstacionamentoController {
     @Operation(summary = "Operação de check-out", description = "Recurso para dar saída de um veículo do estacionamento. " +
             "Requisição exige uso de um bearer token. Acesso restrito a Role='ADMIN'",
             security = @SecurityRequirement(name = "security"),
-            parameters = { @Parameter(in = PATH, name = "recibo", description = "Número do rebibo gerado pelo check-in",
+            parameters = {@Parameter(in = PATH, name = "recibo", description = "Número do rebibo gerado pelo check-in",
                     required = true)
             },
             responses = {
@@ -170,7 +170,6 @@ public class EstacionamentoController {
         PageableDto dto = PageableMapper.toDto(projection);
         return ResponseEntity.ok(dto);
     }
-
 
 
     @Operation(summary = "Localizar os registros de estacionamentos do cliente logado",

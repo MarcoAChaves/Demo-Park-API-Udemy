@@ -44,7 +44,7 @@ public class SpringSecurityConfig {
                         session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 ).addFilterBefore(
                         jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class
-                ).exceptionHandling(ex-> ex
+                ).exceptionHandling(ex -> ex
                         .authenticationEntryPoint(new JwtAuthenticationEntryPoint())
                 ).build();
     }
