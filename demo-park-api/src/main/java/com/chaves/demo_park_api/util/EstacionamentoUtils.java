@@ -43,8 +43,6 @@ public class EstacionamentoUtils {
         return desconto.setScale(2, RoundingMode.HALF_EVEN);
     }
 
-    // 2023-03-16T15:23:48.616463500
-    // 20230316-152121
     public static String gerarRecibo() {
         LocalDateTime date = LocalDateTime.now();
         String recibo = date.toString().substring(0,19);
